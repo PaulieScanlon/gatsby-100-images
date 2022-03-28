@@ -1,12 +1,16 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 const Page = ({
   data: {
     markdownRemark: {
       id,
-      frontmatter: { date, author, image },
+      frontmatter: {
+        date,
+        author,
+        image: { gatsbyImage }
+      },
       rawMarkdownBody
     }
   }
@@ -16,7 +20,7 @@ const Page = ({
       <Link to="/">Back</Link>
       <h1>{date}</h1>
       <h2>{author}</h2>
-      <GatsbyImage image={getImage(image)} alt={id} />
+      <GatsbyImage image={gatsbyImage} alt={id} />
       <p>{rawMarkdownBody}</p>
     </main>
   );
@@ -30,9 +34,7 @@ export const query = graphql`
         date
         author
         image {
-          childImageSharp {
-            gatsbyImageData
-          }
+          gatsbyImage(width: 1000, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
       rawMarkdownBody
