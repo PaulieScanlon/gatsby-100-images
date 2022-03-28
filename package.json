@@ -23,6 +23,7 @@
   "homepage": "https://github.com/PaulieScanlon/gatsby-100-images#readme",
   "dependencies": {
     "gatsby": "4.10.3",
+    "gatsby-plugin-gatsby-cloud": "^4.10.1",
     "gatsby-plugin-image": "2.10.1",
     "gatsby-plugin-sharp": "4.10.2",
     "gatsby-source-filesystem": "4.10.1",
