@@ -27,7 +27,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, reporter }) => 
       component: path.resolve(`src/templates/content-template.js`),
       context: {
         id: node.id
-      }
+      },
+      defer: true
     });
   });
 };
