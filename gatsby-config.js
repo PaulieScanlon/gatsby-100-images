@@ -3,6 +3,7 @@ module.exports = {
     title: 'gatsby-100-images'
   },
   plugins: [
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
@@ -12,6 +13,7 @@ module.exports = {
         path: `${__dirname}/content/`
       }
     },
-    'gatsby-transformer-remark'
+    'gatsby-transformer-remark',
+    'gatsby-plugin-gatsby-cloud'
   ]
 };
